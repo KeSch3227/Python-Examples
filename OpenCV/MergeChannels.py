@@ -1,0 +1,12 @@
+import cv2
+img=cv2.imread('/home/kevin/Schreibtisch/OpenCvTest/Image/lenna.jpg',cv2.IMREAD_COLOR)
+g,b,r= cv2.split(img)
+gray_img=cv2.imread('/home/kevin/Schreibtisch/OpenCvTest/Image/lenna.jpg',cv2.IMREAD_GRAYSCALE)
+gbr_img= cv2.merge((g,b,r))
+grayr_img= cv2.merge((gray_img,r,r))
+rbr_img=cv2.merge((r,b,r))
+cv2.imshow('Original',img)
+cv2.imshow('GRB',gbr_img)
+cv2.imshow('RBR',rbr_img)
+cv2.imshow('GrayRR',grayr_img)
+cv2.waitKey()
